@@ -1,0 +1,42 @@
+﻿@model MVCFizzBuzz.Models.FizzBuzz
+
+<div class="container mt-5">
+    <div class="row row-cols-1 row-cols-lg-2">
+        <div class="col col-lg-4 border-end border-2">
+            <h1>FizzBuzz</h1>
+            <p class="lead fs-4">
+                Eine JavaScript-Übung mit loops!
+            </p>
+            <h2 class="mt-5 border-bottom border-2">Anleitung</h2>
+            <p>
+                Schreibe ein Programm das die Nummern von 1-100 ausgibt.
+                Für die Multiplikatoren von '3' soll Fizz anstelle der Nummer anzeigt werden und für Multiplikatoren
+                anstelle von '5' das Wort Buzz. Wenn die Zahl durch beide Zahlen teilbar ist, lass "FizzBuzz" anzeigen.
+            </p>
+
+        </div>
+        <div class="col col-lg-8">
+            <div>
+                <h5>Gib hier die Multiplikatoren ein!</h5>
+                <form asp-controller="Home" asp-action="FBPage" method="post" class="row gy-2 gx-3">
+                    <div class="form-group">
+                        <label asp-for="FizzValue">FizzValue</label>
+                        <input type="number" asp-for="FizzValue" class="form-control" placeholder="Fizz Wert" value="@Model.FizzValue" aria-label="Fizz Wert" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="BuzzValue">BuzzValue</label>
+                        <input type="number" asp-for="BuzzValue" class="form-control" placeholder="Buzz Wert" value="@Model.BuzzValue" aria-label="Buzz Wert" />
+                    </div>
+                    <div class="col-12 d-flex justify-content-end">
+                        <button id="btnSubmit" type="button" class="btn btn-primary btn-lg">Starte FizzBuzz!</button>
+                    </div>
+                </form>
+                <h3>Ergebnisse</h3>
+                <div class="table-responsive">
+                @*Table goes here*@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

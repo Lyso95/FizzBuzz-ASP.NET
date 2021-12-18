@@ -22,7 +22,23 @@ namespace MVCFizzBuzz.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public IActionResult FBPage()
+        {
+            FizzBuzz model = new();
 
+            model.FizzValue = 3;
+            model.BuzzValue = 5;
+
+            return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult FBPage(FizzBuzz fizzbuzz)
+        {
+
+            return View(fizzbuzz);
+        }
         public IActionResult Privacy()
         {
             return View();
