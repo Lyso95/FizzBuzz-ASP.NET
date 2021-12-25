@@ -28,12 +28,30 @@
                         <input type="number" asp-for="BuzzValue" class="form-control" placeholder="Buzz Wert" value="@Model.BuzzValue" aria-label="Buzz Wert" />
                     </div>
                     <div class="col-12 d-flex justify-content-end">
-                        <button id="btnSubmit" type="button" class="btn btn-primary btn-lg">Starte FizzBuzz!</button>
+                        <button type="submit" class="btn btn-primary btn-lg">Starte FizzBuzz!</button>
                     </div>
                 </form>
                 <h3>Ergebnisse</h3>
                 <div class="table-responsive">
-                @*Table goes here*@
+                    @*Table goes here*@
+                    @if (Model.Result.Count > 0)
+                    {
+                        <table class="table-striped table-hover table table-dark">
+                            <thead>
+                                <tr><th colspan="5">Fizz Buzz Results</th></tr>
+                            </thead>
+                            @for (int i = 0; i < Model.Result.Count(); i += 5)
+                            {
+                                <tr>
+                                    <td>@Model.Result[i]</td>
+                                    <td>@Model.Result[i + 1]</td>
+                                    <td>@Model.Result[i + 2]</td>
+                                    <td>@Model.Result[i + 3]</td>
+                                    <td>@Model.Result[i + 4]</td>
+                                </tr>
+                            }
+                        </table>
+                    }
                 </div>
             </div>
         </div>
